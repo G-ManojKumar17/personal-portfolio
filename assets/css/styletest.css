@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-body: #d3d3d3;
+    /* Light gray for body text */
+    --color-heading: #f5f5f5;
+    /* Near white for headings */
+    --color-base: #1b1b1b;
+    /* Dark charcoal for base background */
+    --color-base2: #0f0f0f;
+    /* Almost black for secondary background */
+    --color-brand: #8a8a8a;
+    /* Soft gray for brand highlights */
+    --color-brand2: #5a5a5a;
+    /* Darker gray for hover effects */
+    --sidbar-width: 260px;
+    /* Slightly wider sidebar */
+    --font-base: "Bai Jamjuree";
+}
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-brand);
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.text-brand {
+    color: var(--color-brand);
+}
+
+.bg-base {
+    background-color: var(--color-base);
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shadow-effect {
+    transition: all 0.3s ease;
+}
+
+.shadow-effect:hover {
+    box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background-color: var(--color-brand);
+    color: var(--color-base2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.iconbox:hover {
+    background-color: var(--color-brand2);
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--color-base);
+    border-right: 1px solid var(--color-brand2);
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #e6e6e6;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--color-brand);
+}
+
+.navbar .nav-link.active {
+    color: var(--color-brand);
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidbar-width);
+        background: linear-gradient(rgba(27, 27, 27, 0.95), rgba(27, 27, 27, 0.95)), url(../images/sidebar-img.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar-brand img {
+        border: 8px solid var(--color-brand);
+        border-radius: 50%;
+    }
+
+    /* CONTENT WRAPPER */
+    #content-wrapper {
+        padding-left: var(--sidbar-width);
+    }
+}
+
+/* BUTTONS */
+.btn {
+    padding: 12px 28px;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-base);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background-color: var(--color-brand2);
+    color: var(--color-base);
+    border-color: var(--color-brand2);
+}
+
+.link-custom {
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.3s;
+}
+
+.link-custom:hover::after {
+    width: 100%;
+}
+
+/* CARD */
+.card-custom .card-custom-image {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-custom .card-custom-image img {
+    transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+    transform: scale(1.1);
+}
+
+/* CONTACT FORM */
+#contact .form-control {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+    color: var(--color-body);
+    border-radius: 4px;
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-brand);
+    box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+    color: var(--color-body);
+}
+
+#contact input.form-control {
+    height: 44px;
+}
+
+/* SOCIAL ICONS */
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-base);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--color-body);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--color-brand2);
+    color: var(--color-base2);
+}
+
+
+/* flip-card-section */
+
+.card-flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-flip:hover {
+    transform: rotateY(180deg);
+}
+
+.card-flip .front-flip,
+.card-flip .back-flip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.front-flip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-flip {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+/* Optional: To add some shadow effect */
+.card-container {
+    perspective: 1000px;
+}
+
+.card-content {
+    min-height: 300px;
+    margin-bottom: 30px;
+}
+
+.qualification-container{
+    justify-content: space-evenly;
+}
+
